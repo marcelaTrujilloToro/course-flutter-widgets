@@ -3,7 +3,7 @@ import 'package:widgets_app/presentation/screens/screens.dart';
 
 // GoRouter configuration
 final appRouter = GoRouter(
-  initialLocation: '/snackbars',
+  initialLocation: '/animated',
   routes: [
     GoRoute(
       path: '/',
@@ -29,6 +29,11 @@ final appRouter = GoRouter(
       path: '/snackbars',
       name: SnackbarScreen.name,
       builder: (context, state) => const SnackbarScreen(),
+    ),
+    GoRoute(
+      path: '/animated',
+      name: AnimatedScreen.name,
+      builder: (context, state) => const AnimatedScreen(),
     ),
   ],
 );
