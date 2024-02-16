@@ -3,7 +3,7 @@ import 'package:widgets_app/presentation/screens/screens.dart';
 
 // GoRouter configuration
 final appRouter = GoRouter(
-  initialLocation: '/animated',
+  initialLocation: '/ui-controls',
   routes: [
     GoRoute(
       path: '/',
@@ -34,6 +34,11 @@ final appRouter = GoRouter(
       path: '/animated',
       name: AnimatedScreen.name,
       builder: (context, state) => const AnimatedScreen(),
+    ),
+    GoRoute(
+      path: '/ui-controls',
+      name: UiControlsScreen.name,
+      builder: (context, state) => const UiControlsScreen(),
     ),
   ],
 );
