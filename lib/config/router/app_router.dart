@@ -3,7 +3,7 @@ import 'package:widgets_app/presentation/screens/screens.dart';
 
 // GoRouter configuration
 final appRouter = GoRouter(
-  initialLocation: '/counter',
+  initialLocation: '/',
   routes: [
     GoRoute(
       path: '/',
@@ -54,6 +54,11 @@ final appRouter = GoRouter(
       path: '/infinite',
       name: InfiniteScrollScreen.name,
       builder: (context, state) => const InfiniteScrollScreen(),
+    ),
+    GoRoute(
+      path: '/theme-changer',
+      name: ThemeChangerScreen.name,
+      builder: (context, state) => const ThemeChangerScreen(),
     ),
   ],
 );

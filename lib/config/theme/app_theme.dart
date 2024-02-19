@@ -16,18 +16,19 @@ const List<Color> colorList = [
 
 class AppTheme {
   final int selectedColor;
+  final bool isDarkMode;
 
-  AppTheme({
-    required this.selectedColor,
-  }) : assert(selectedColor >= 0 && selectedColor < colorList.length - 1,
-            'Colors must be between 0 and ${colorList.length}');
+  AppTheme({this.selectedColor = 0, this.isDarkMode = true})
+      : assert(selectedColor >= 0, 'Selected color must be greater than 0'),
+        assert(selectedColor < colorList.length,
+            'Colors must be between 0 and ${colorList.length - 1}');
   ThemeData theme() {
     return ThemeData(
-        useMaterial3: true,
-        colorSchemeSeed: colorList[selectedColor],
-        appBarTheme: const AppBarTheme(
-            centerTitle: false)); /* forzar o no el centrado de los appBar */
-
-    // brightness: Brightness.dark);
+      useMaterial3: true,
+      colorSchemeSeed: colorList[selectedColor],
+      appBarTheme: const AppBarTheme(centerTitle: false),
+      brightness: isDarkMode ? Brightness.dark : Brightness.light,
+    );
+    /* forzar o no el centrado de los appBar */
   }
 }
